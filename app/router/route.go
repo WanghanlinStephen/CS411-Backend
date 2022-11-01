@@ -20,6 +20,10 @@ func router(route *gin.Engine) *gin.Engine {
 	visitorAPI := v1.Group("/api")
 	{
 		visitorAPI.GET("index", server.Index)
+		//delete
+		visitorAPI.GET("delete", server.Delete)
+		//update
+		//visitorAPI.POST()
 	}
 
 	return route
