@@ -19,11 +19,11 @@ func router(route *gin.Engine) *gin.Engine {
 	//遊客操作，无需登录
 	visitorAPI := v1.Group("/api")
 	{
-		visitorAPI.GET("index", server.Index)
+		visitorAPI.GET("test", server.Test)
 		//delete
-		visitorAPI.GET("delete", server.Delete)
+		visitorAPI.POST("delete", server.Delete)
 		//update
-		//visitorAPI.POST()
+		visitorAPI.POST("update", server.Update)
 	}
 
 	return route
@@ -41,10 +41,10 @@ func RouteInit() *gin.Engine {
 	}
 	route.Use(gin.Recovery()) // 捕捉异常
 	route.Use(middle.Access)
-	route.Use(Cors())
+	//route.Use(Cors())
 	//https config
 
-	route.Use(TlsHandler())
+	//route.Use(TlsHandler())
 
 	return router(route)
 }

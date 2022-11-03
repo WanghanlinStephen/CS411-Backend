@@ -1,10 +1,6 @@
 package model
 
-import (
-	"github.com/gin-gonic/gin"
-)
-
-func DeleteSQL(c *gin.Context, dataSource string, conditions map[string]string) error {
+func DeleteSQL(dataSource string, conditions map[string]string) error {
 	query := "delete from "
 	query += dataSource
 	query += " where "

@@ -1,5 +1,6 @@
 package model
 
+//
 //func GetConnectionsList() (connectionList []models.Connection, err error) {
 //	//fixme:等待优化
 //	sql:="select c.id,n1.id,n1.name_english,n1.name_chinese,n1.name_traditional_chinese,n1.latitude,n1.longitude,n1.intersectional_angle,n1.is_staircase,n2.id,n2.name_english,n2.name_chinese,n2.name_traditional_chinese,n2.latitude,n2.longitude,n2.intersectional_angle,n2.is_staircase,c.weight,c.map_id from connection AS c,node AS n1,node As n2 where c.source=n1.id and c.destination=n2.id"

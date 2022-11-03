@@ -12,7 +12,7 @@ import (
 
 func main() {
 	config.Run()
-	if err := model.Run(); err != nil {
+	if err := model.RunCloud(); err != nil {
 		fmt.Println("数据库链接失败:", err)
 		return
 	}
@@ -21,8 +21,8 @@ func main() {
 		return
 	}
 	r := router.RouteInit()
-	r.RunTLS(":8080", "./ssl/fullchain.pem", "./ssl/privkey.pem")
-	r.Static("/static", "./static")
+	//r.RunTLS(":8080", "./ssl/fullchain.pem", "./ssl/privkey.pem")
+	//r.Static("/static", "./static")
 	s := &http.Server{
 		Addr:           fmt.Sprintf(":%d", config.HTTPPort),
 		Handler:        r,
