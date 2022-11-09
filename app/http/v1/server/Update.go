@@ -28,7 +28,7 @@ func Update(c *gin.Context) {
 	//execute sql query
 	err := model.UpdateSQL(dataSource, updates, condition)
 	if err != nil {
-		response.Error(c, "Fail to delete query with error:"+err.Error())
+		response.Error(c, "Fail to update query with error:"+err.Error())
 		return
 	}
 	responseData := &models.UpdateSQLOutput{

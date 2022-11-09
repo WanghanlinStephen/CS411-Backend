@@ -20,7 +20,7 @@ func router(route *gin.Engine) *gin.Engine {
 	visitorAPI := v1.Group("/api")
 	{
 		visitorAPI.GET("test", server.Test)
-		visitorAPI.GET("advanceQuery", server.Advance)
+		visitorAPI.GET("advancequery_1", server.AdvanceOne)
 		//delete
 		visitorAPI.POST("delete", server.Delete)
 		//update
