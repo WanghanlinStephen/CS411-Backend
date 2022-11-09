@@ -12,6 +12,7 @@ import (
 
 func main() {
 	config.Run()
+
 	if err := model.RunCloud(); err != nil {
 		fmt.Println("数据库链接失败:", err)
 		return

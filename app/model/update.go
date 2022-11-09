@@ -9,12 +9,16 @@ func UpdateSQL(dataSource string, updates map[string]string, conditions map[stri
 		query += " ,"
 	}
 	query = query[:len(query)-2]
-	query += " where "
-	for key, value := range conditions {
-		query += key + "=" + value
-		query += " and"
+
+	if len(conditions) != 0 {
+		query += " where "
+		for key, value := range conditions {
+			query += key + "=" + value
+			query += " and"
+		}
+		query = query[:len(query)-4]
 	}
-	query = query[:len(query)-4]
+
 	if _, err := Db.Exec(query); err != nil {
 		return err
 	}
